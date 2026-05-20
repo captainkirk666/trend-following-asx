@@ -634,7 +634,10 @@ function loadTop10(){
       document.createElement("tr");
 
     const ticker =
-      stock["Ticker"] || "N/A";
+      stock["Ticker"] || "-";
+
+    const tv =
+      stock["TV Symbol"] || "-";
 
     const score =
       Number(stock["Score"]) || 0;
@@ -647,30 +650,33 @@ function loadTop10(){
         .toLocaleString();
 
     row.innerHTML = `
-      <td class="rank-cell">
-        #${index + 1}
-      </td>
+      <td>#${index + 1}</td>
 
       <td>
-        ${ticker}
+        <strong>${ticker}</strong>
       </td>
 
-      <td class="score-cell">
+      <td>${tv}</td>
+
+      <td style="color:#38bdf8;font-weight:700;">
         ${score}
       </td>
 
-      <td class="trend-yes">
+      <td class="${
+        trend === "YES"
+          ? "positive"
+          : "negative"
+      }">
         ${trend}
       </td>
 
-      <td>
-        ${volume}
-      </td>
+      <td>${volume}</td>
     `;
 
     body.appendChild(row);
 
   });
+
 }
   
 /* TREND LISTS */

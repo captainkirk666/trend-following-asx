@@ -555,9 +555,9 @@ function checkTrend(){
 
   if(match){
 
-    const isYes =
-      String(match["Result"])
-        .toUpperCase() === "YES";
+const isYes =
+  String(match["Trend"])
+    .toUpperCase() === "YES";
 
     result.innerHTML = `
       <div class="trend-result-card">
@@ -574,9 +574,15 @@ function checkTrend(){
           Trend Score: ${match["Score"]}
         </div>
 
-        <div class="trend-notes">
-          ${match["Notes"]}
-        </div>
+<div class="trend-notes">
+
+  Price: ${match["Price"]}
+
+  <br><br>
+
+  200MA: ${match["200MA"]}
+
+</div>
 
       </div>
     `;

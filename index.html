@@ -96,7 +96,7 @@ fetch("./components/navbar.html")
       <tr>
         <th>Rank</th>
         <th>Ticker</th>
-        <th>TV Symbol</th>
+        <th>Company</th>
         <th>Score</th>
         <th>Trend</th>
         <th>Volume</th>
@@ -636,8 +636,6 @@ function loadTop10(){
     const ticker =
       stock["Ticker"] || "-";
 
-    const tv =
-      stock["TV Symbol"] || "-";
 
     const score =
       Number(stock["Score"]) || 0;
@@ -656,7 +654,9 @@ function loadTop10(){
         <strong>${ticker}</strong>
       </td>
 
-      <td>${tv}</td>
+<td>
+  ${stock["Company"] || "-"}
+</td>
 
       <td style="color:#38bdf8;font-weight:700;">
         ${score}

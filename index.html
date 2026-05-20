@@ -610,8 +610,8 @@ function handleTop10(data){
 
   data.forEach((stock,index) => {
 
-    const score =
-      Number(stock["Score"]) || 0;
+const score =
+  Number(stock["Score"] || stock[5]) || 0;
 
     const fill =
       Math.min(score,150);
@@ -627,7 +627,7 @@ function handleTop10(data){
       </div>
 
       <div class="top10-ticker">
-        ${stock["Ticker"]}
+        ${stock["Ticker"] || stock[0]}
       </div>
 
       <div class="top10-score">

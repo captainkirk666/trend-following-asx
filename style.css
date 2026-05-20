@@ -383,6 +383,57 @@ h3{
   border-radius:999px;
 }
 
+/* ===== TOP 10 TABLE ===== */
+
+.table-wrap{
+  width:100%;
+  overflow-x:auto;
+  margin-top:30px;
+}
+
+.scanner-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#07142b;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.scanner-table th{
+  background:#0d1b36;
+  color:#5ecbff;
+  padding:18px;
+  text-align:left;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.scanner-table td{
+  padding:18px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  font-size:15px;
+  color:#ffffff;
+}
+
+.scanner-table tr:hover{
+  background:rgba(94,203,255,0.06);
+}
+
+.rank-cell{
+  color:#5ecbff;
+  font-weight:700;
+}
+
+.score-cell{
+  color:#5ecbff;
+  font-weight:700;
+}
+
+.trend-yes{
+  color:#00d26a;
+  font-weight:700;
+}
+
 /* ===== VALUE SECTION ===== */
 
 .homepage-body {

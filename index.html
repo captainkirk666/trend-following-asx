@@ -613,15 +613,22 @@ if(!isYes){
 </div>
       </div>
     `;
-    
+
+
+
 } else {
 
   result.innerHTML = `
     <div class="trend-result-card">
 
-      <h2 class="trend-no">
-        Ticker Not Found
+      <h2 class="trend-neutral">
+        NOT IN TREND
       </h2>
+
+      <div class="trend-notes">
+        This stock is not currently meeting the requirements for being
+        In Trend
+      </div>
 
     </div>
   `;
@@ -629,6 +636,9 @@ if(!isYes){
 }
 
 }
+    
+    
+
   
 /* TOP 10 list */
 

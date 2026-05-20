@@ -615,56 +615,59 @@ function loadTop10(){
   document.body.appendChild(s);
 }
 
-function handleTop10(data){
+
+ function handleTop10(data){
 
   top10Data = data;
 
-  const grid =
-    document.getElementById("top10Grid");
+  const body =
+    document.getElementById("top10Body");
 
-  if(!grid) return;
+  if(!body) return;
 
-  grid.innerHTML = "";
+  body.innerHTML = "";
 
   data.forEach((stock,index) => {
 
+    const row =
+      document.createElement("tr");
+
     const ticker =
-      (stock["Ticker"] || "N/A")
-        .replace("ASX:","");
+      stock["Ticker"] || "N/A";
 
     const score =
       Number(stock["Score"]) || 0;
 
-    const fill =
-      Math.min(score,150);
+    const trend =
+      stock["Trend"] || "-";
 
-    const card =
-      document.createElement("div");
+    const volume =
+      Number(stock["Volume"] || 0)
+        .toLocaleString();
 
-    card.className = "top10-card";
-
-    card.innerHTML = `
-      <div class="top10-rank">
+    row.innerHTML = `
+      <td class="rank-cell">
         #${index + 1}
-      </div>
+      </td>
 
-      <div class="top10-ticker">
+      <td>
         ${ticker}
-      </div>
+      </td>
 
-      <div class="top10-score">
-        Score: ${score}
-      </div>
+      <td class="score-cell">
+        ${score}
+      </td>
 
-      <div class="top10-bar">
-        <div
-          class="top10-fill"
-          style="width:${fill}%">
-        </div>
-      </div>
+      <td class="trend-yes">
+        ${trend}
+      </td>
+
+      <td>
+        ${volume}
+      </td>
     `;
 
-    grid.appendChild(card);
+    body.appendChild(row);
 
   });
 }

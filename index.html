@@ -704,7 +704,12 @@ function handleNewEntries(data){
 
   });
 }
-  
+
+  function handleASXMaster(data) {
+
+  console.log("ASX MASTER:", data);
+
+}
   
 /* RUN */
 document.addEventListener("DOMContentLoaded", () => {
@@ -717,6 +722,8 @@ loadTrendScanner();
   loadSheet("InTrend May 1", "handleInTrend");
   loadSheet("Breakout May 26", "handleBreakout");
   loadSheet("ETF May 1", "handleETF");
+
+  loadSheet("ASX MASTER", "handleASXMaster");
 
   loadSheet("Darvas Oct 25 History", "handleDarvasHistory");
   loadSheet("InTrend May 1 History", "handleInTrendHistory");

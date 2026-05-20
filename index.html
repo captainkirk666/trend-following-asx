@@ -559,6 +559,30 @@ const isYes =
   String(match["Trend"])
     .toUpperCase() === "YES";
 
+    let notes = "";
+
+if(!isYes){
+
+  notes =
+    "Currently below trend requirements. Not considered in a confirmed uptrend.";
+
+} else if(match["Entry Trend"] === "NO"){
+
+  notes =
+    "Early-stage trend setup. Momentum improving but trend still developing.";
+
+} else if(Number(match["Score"]) > 250){
+
+  notes =
+    "Strong momentum leader with confirmed long-term trend.";
+
+} else {
+
+  notes =
+    "Healthy trend structure with positive momentum characteristics.";
+
+}
+
     result.innerHTML = `
       <div class="trend-result-card">
 

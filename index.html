@@ -608,41 +608,47 @@ function handleTop10(data){
 
   grid.innerHTML = "";
 
- data.forEach((stock,index) => {
+  data.forEach((stock,index) => {
 
-  const ticker = stock[0] || "N/A";
-  const score = Number(stock[5]) || 0;
+    const ticker =
+      (stock["Ticker"] || "N/A")
+        .replace("ASX:","");
 
-  const fill = Math.min(score,150);
+    const score =
+      Number(stock["Score"]) || 0;
 
-  const card = document.createElement("div");
+    const fill =
+      Math.min(score,150);
 
-  card.className = "top10-card";
+    const card =
+      document.createElement("div");
 
-  card.innerHTML = `
-    <div class="top10-rank">
-      #${index + 1}
-    </div>
+    card.className = "top10-card";
 
-    <div class="top10-ticker">
-      ${ticker}
-    </div>
-
-    <div class="top10-score">
-      Score: ${score}
-    </div>
-
-    <div class="top10-bar">
-      <div
-        class="top10-fill"
-        style="width:${fill}%">
+    card.innerHTML = `
+      <div class="top10-rank">
+        #${index + 1}
       </div>
-    </div>
-  `;
 
-  grid.appendChild(card);
+      <div class="top10-ticker">
+        ${ticker}
+      </div>
 
-});
+      <div class="top10-score">
+        Score: ${score}
+      </div>
+
+      <div class="top10-bar">
+        <div
+          class="top10-fill"
+          style="width:${fill}%">
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+
+  });
 }
   
 /* TREND LISTS */

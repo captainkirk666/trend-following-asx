@@ -677,7 +677,14 @@ function handleNewEntries(data){
 
   grid.innerHTML = "";
 
-  data.forEach(stock => {
+  data.forEach((stock,index) => {
+
+  const ticker =
+    (stock[0] || "N/A")
+      .replace("ASX:","");
+
+  const score =
+    Number(stock[5]) || 0;
 
   const card =
     document.createElement("div");
@@ -685,18 +692,18 @@ function handleNewEntries(data){
   card.className = "new-entry-card";
 
   card.innerHTML = `
-      <div class="new-entry-ticker">
-        ${stock["Ticker"]}
-      </div>
+    <div class="new-entry-ticker">
+      ${ticker}
+    </div>
 
-      <div class="new-entry-score">
-        Score: ${stock["Score"]}
-      </div>
+    <div class="new-entry-score">
+      Score: ${score}
+    </div>
 
-      <div class="new-entry-badge">
-        NEW ENTRY
-      </div>
-    `;
+    <div class="new-entry-badge">
+      NEW ENTRY
+    </div>
+  `;
 
   grid.appendChild(card);
 

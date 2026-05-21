@@ -98,7 +98,7 @@ fetch("./components/navbar.html")
         <th>Ticker</th>
         <th>Company</th>
         <th>Score</th>
-        <th>Trend</th>
+       <th>Trend Stage</th>
         <th>Volume</th>
       </tr>
     </thead>
@@ -707,13 +707,9 @@ function loadTop10(){
         ${score}
       </td>
 
-      <td class="${
-        trend === "YES"
-          ? "positive"
-          : "negative"
-      }">
-        ${trend}
-      </td>
+    <td class="trend-stage">
+  ${stock["Trend Stage"] || "-"}
+</td>
 
       <td>${volume}</td>
     `;

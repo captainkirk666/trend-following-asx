@@ -280,15 +280,21 @@ h5{
 
 #newEntriesGrid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+  gap:14px;
 }
 
 .new-entry-card{
   background:#08152d;
   border:1px solid rgba(255,255,255,0.08);
-  border-radius:22px;
-  padding:24px;
+
+  border-radius:14px;
+
+  padding:14px 16px;
+
   transition:0.2s ease;
 }
 
@@ -298,26 +304,33 @@ h5{
 }
 
 .new-entry-ticker{
-  font-size:2rem;
+  font-size:1.15rem;
   font-weight:700;
   color:white;
 }
 
 .new-entry-score{
-  margin-top:12px;
-  font-size:1.1rem;
+  margin-top:6px;
+  font-size:0.9rem;
   color:#38bdf8;
 }
 
 .new-entry-badge{
   display:inline-block;
-  margin-top:18px;
-  padding:6px 12px;
+
+  margin-top:10px;
+
+  padding:4px 10px;
+
   border-radius:999px;
+
   background:#22c55e22;
   color:#22c55e;
-  font-size:0.85rem;
+
+  font-size:0.7rem;
   font-weight:700;
+
+  letter-spacing:0.5px;
 }
 
 

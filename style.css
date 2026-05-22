@@ -279,23 +279,33 @@ h5{
 }
 
 #newEntriesGrid{
-  display:grid;
 
-  grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
+  display:flex;
 
-  gap:14px;
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  gap:18px;
+
 }
 
 .new-entry-card{
+
+  width:180px;
+
   background:#08152d;
+
   border:1px solid rgba(255,255,255,0.08);
 
   border-radius:14px;
 
-  padding:14px 16px;
+  padding:16px 14px;
 
   transition:0.2s ease;
+
+  text-align:center;
+
 }
 
 .new-entry-card:hover{

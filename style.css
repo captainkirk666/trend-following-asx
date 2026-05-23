@@ -108,6 +108,33 @@ header,
   text-align:center;
 }
 
+.master-card{
+
+  background:linear-gradient(
+    180deg,
+    #0f172a,
+    #020617
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:18px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.35);
+
+  transition:0.2s ease;
+
+}
+
+.master-card:hover{
+
+  transform:translateY(-3px);
+
+  border-color:#38bdf8;
+
+}
+
 /* ===== HEADER ===== */
 
   .homepage-header h4 {

@@ -316,20 +316,27 @@ h5{
 .new-entry-card{
 
 background: linear-gradient(180deg, #0f172a, #020617);
-  border-radius: 28px;
+  border-radius: 14px;
   padding: 14px 14px;
+    border:0px
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   width:180px;
+  text-align:center;
+    transition:0.2s ease;
 
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
 
   
+
+
+
+
 
 
 

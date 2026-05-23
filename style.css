@@ -310,7 +310,6 @@ h5{
 
   justify-content:center;
 
-  gap:18px;
 
 }
 
@@ -324,7 +323,7 @@ h5{
 
   border-radius:14px;
 
-  padding:16px 14px;
+  padding:0px 14px;
 
   transition:0.2s ease;
 
@@ -372,7 +371,7 @@ h5{
 .top10-section{
   max-width:1200px;
   margin:40px auto;
-  padding:0 20px;
+  padding:0px 20px;
 }
 
 .top10-section h2{
@@ -499,7 +498,6 @@ h5{
   flex-direction: column;
   align-items: center;
   gap: 0px; /* tighter spacing */
-  margin: 0px 0 2px; /* reduced vertical space */
 }
 
 .homepage-value {
@@ -507,15 +505,12 @@ h5{
   font-size: 48px;
   font-weight: 600;
   color: #f1f5f9;
-   margin-top: 0px;
 }
 
 .homepage-change {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 0px;
-   margin-bottom: 0px;
 }
 
 
@@ -525,7 +520,6 @@ h5{
   gap: 16px;
   font-size: 20px;   /* match old % size */
   font-weight: 600;
-  margin-top: 0px;
 }
 
 .positive { color: #22c55e; }
@@ -536,7 +530,6 @@ h5{
 .homepage-chart {
   position: relative;
   height: 150px;
-  margin-top: 2px;
   filter: brightness(1.15) saturate(1.1);
 }
 

@@ -590,7 +590,9 @@ if(!isYes){
 }
 
     result.innerHTML = `
-      <div class="trend-result-card">
+<div class="trend-result-card ${
+  isYes ? "trend-result-yes" : "trend-result-no"
+}">
 
         <h2 class="${
           isYes ? "trend-yes" : "trend-no"
@@ -625,7 +627,9 @@ if(!isYes){
 } else {
 
   result.innerHTML = `
-    <div class="trend-result-card">
+<div class="trend-result-card ${
+  isYes ? "trend-result-yes" : "trend-result-no"
+}">
 
       <h2 class="trend-neutral">
         NOT IN TREND

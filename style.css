@@ -328,7 +328,7 @@ h5{
 
 .trend-score{
     font-family:'Source Serif 4', serif;
-  font-size:22px;
+  font-size:52px;
  gap:10px;
   color:#94a3b8;
   margin:10px 0;
@@ -336,7 +336,7 @@ h5{
 
 .trend-notes{
       font-family:'Source Serif 4', serif;
-  font-size:15px;
+  font-size:26px;
  gap:10px;
   color:#94a3b8;
   color:#94a3b8;
@@ -351,7 +351,7 @@ h5{
   }
 
   .trend-checker h2{
-    font-size:1.5rem;
+    font-size:2.5rem;
   }
 
   .trend-checker input{

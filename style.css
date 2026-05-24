@@ -262,7 +262,11 @@ h5{
   padding:14px 18px;
   border-radius:14px;
   border:none;
-  background:#0f1f3d;
+   background: linear-gradient(
+    180deg,
+    #0f172a,
+    #020617
+  );
   color:white;
   font-size:1rem;
   outline:none;

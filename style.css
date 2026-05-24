@@ -4,6 +4,27 @@
 /* ===== DESIGN SYSTEM ===== */
 :root {
 
+  --bg-main: #020617;
+
+  --bg-panel: #0f172a;
+
+  --border: #1e293b;
+
+  --text-main: #e2e8f0;
+
+  --text-soft: #cbd5e1;
+
+  --text-muted: #94a3b8;
+
+  --accent: #3b82f6;
+
+  --radius: 14px;
+
+  --gap: 12px;
+
+
+
+  
   /* ===== BLACK / NAVY ===== */
 
   --black-deep: #020617;

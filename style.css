@@ -668,8 +668,8 @@ font-family:'Source Serif 4', serif;
 
 /* ===== Table note ===== */
 .table-note{
-  margin-top:8px;
-  text-align:center;
+  margin-top:2px;
+  text-align:right;
 
   font-size:0.65rem;
   color:#94a3b8;

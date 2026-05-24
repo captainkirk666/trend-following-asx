@@ -324,10 +324,12 @@ h5{
 
 .trend-yes{
   color:#22c55e;
+    background:green;
 }
 
 .trend-no{
   color:#ef4444;
+    background:#0f172a;
 }
 
 .trend-score{

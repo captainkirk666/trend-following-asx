@@ -666,7 +666,16 @@ font-family:'Source Serif 4', serif;
   filter: brightness(1.1);
 }
 
+/* ===== Table note ===== */
+.table-note{
+  margin-top:8px;
+  text-align:center;
 
+  font-size:0.65rem;
+  color:#94a3b8;
+
+  opacity:0.8;
+}
 
 /* ===== CARD SHARE BUTTON ===== */
 

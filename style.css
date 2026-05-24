@@ -276,7 +276,11 @@ h5{
 
   border:1px solid rgba(255,255,255,0.08);
 
-  background:#08152d;
+   background: linear-gradient(
+    180deg,
+    #0f172a,
+    #020617
+  );
 
   color:#dbe7ff;
 

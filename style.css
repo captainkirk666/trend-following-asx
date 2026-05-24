@@ -463,10 +463,11 @@ font-family:'Source Serif 4', serif;
 }
 
 .new-entry-badge{
-  display:inline-block;
+  display:block;
   width:fit-content;
 
-  margin-top:10px;
+  margin:10px auto 0;
+
   padding:4px 10px;
 
   border-radius:999px;

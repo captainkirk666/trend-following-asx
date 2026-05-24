@@ -3,18 +3,54 @@
 
 /* ===== DESIGN SYSTEM ===== */
 :root {
-  --bg-main: #020617;
-  --bg-panel: #0f172a;
-  --border: #1e293b;
+:root {
 
-  --text-main: #e2e8f0;
-  --text-soft: #cbd5e1;
-  --text-muted: #94a3b8;
+  /* ===== BLACK / NAVY ===== */
 
-  --accent: #3b82f6;
+  --black-deep: #020617;
+  --navy-dark: #08152d;
+  --navy-panel: #0f172a;
+  --slate-dark: #1e293b;
 
-  --radius: 14px;
-  --gap: 12px;
+  /* ===== WHITE / GREY ===== */
+
+  --white: #ffffff;
+
+  --grey-lightest: #e2e8f0;
+  --grey-light: #cbd5e1;
+  --grey-mid: #94a3b8;
+
+  /* ===== BLUE ===== */
+
+  --blue-bright: #38bdf8;
+  --blue-main: #3b82f6;
+  --blue-soft: #5ecbff;
+  --blue-dark: #2563eb;
+
+  /* ===== GREEN ===== */
+
+  --green-bright: #22c55e;
+  --green-dark: #15803d;
+
+  /* ===== RED ===== */
+
+  --red-main: #ef4444;
+
+  /* ===== ORANGE ===== */
+
+  --orange-main: #f59e0b;
+
+  /* ===== BORDERS ===== */
+
+  --border-light:
+    rgba(255,255,255,0.06);
+
+  --border-main:
+    rgba(255,255,255,0.08);
+
+  --border-blue:
+    rgba(56,189,248,0.3);
+
 }
 
 /* ===== GLOBAL ===== */

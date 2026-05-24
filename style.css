@@ -464,19 +464,17 @@ font-family:'Source Serif 4', serif;
 
 .new-entry-badge{
   display:inline-block;
+  width:fit-content;
 
   margin-top:10px;
-
   padding:4px 10px;
 
   border-radius:999px;
-
   background:#22c55e;
   color:#1e293b;
 
   font-size:0.7rem;
   font-weight:700;
-
   letter-spacing:0.5px;
 }
 

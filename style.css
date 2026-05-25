@@ -277,7 +277,10 @@ h5{
   font-size:1rem;
   outline:none;
 }
-
+.trend-checker input::placeholder{
+  color:#94a3b8;
+  opacity:1;
+}
 .trend-checker button{
   height:52px;
   padding:0 28px;

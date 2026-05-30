@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio Dashboard</title>
+<title>Contact Us</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=16">
@@ -10,7 +10,7 @@
 
 <body>
 
-<!-- ✅ NAVBAR -->
+<!-- NAVBAR -->
 <div id="navbar"></div>
 
 <script>
@@ -19,7 +19,6 @@ fetch("./components/navbar.html")
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
 
-    // 👇 Step 3 goes HERE (inside fetch)
     const links = document.querySelectorAll(".nav-tab");
     const current = window.location.pathname.split("/").pop();
 
@@ -30,203 +29,41 @@ fetch("./components/navbar.html")
     });
   });
 </script>
-  
+
 <div class="page">
-<h2>CONTACT US</h2>
 
+  <h2>CONTACT US</h2>
 
-  
-<div class="info-text">
-  <p>Welcome to Trend Following ASX.</p>
+  <div class="info-text">
 
- <p>We're always interested in hearing from investors, traders, and readers. Whether you have a question about our methodology, feedback on the site, or suggestions for future features, we'd love to hear from you.</p>
+    <p>Welcome to Trend Following ASX.</p>
 
- <p>While we may not be able to respond to every enquiry immediately, we do read all messages and appreciate your feedback.</p>
+    <p>
+      We're always interested in hearing from investors, traders and readers.
+      Whether you have a question about our methodology, feedback on the site,
+      or suggestions for future features, we'd love to hear from you.
+    </p>
 
-Email: contact@trendfollowingasx.com
+    <p>
+      While we may not be able to respond to every enquiry immediately,
+      we do read all messages and appreciate your feedback.
+    </p>
 
- <p>Trend Following ASX provides market analysis and educational information only and does not provide personal financial advice. </p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:contact@trendfollowingasx.com">
+        contact@trendfollowingasx.com
+      </a>
+    </p>
 
-</div>
-
-  <div class="site-update" id="siteUpdate" style="display:none;">
-  <span class="update-label">Update</span>
-  <span class="update-text"></span>
-</div>
-  
-
-<!-- TRADINGVIEW CHART SECTION -->
-<div id="tv-charts"></div>
-
-<!-- EXPANDABLE MODAL -->
-<div id="tvModal" class="tv-modal">
-  <div class="tv-modal-content">
-
-    <span id="closeTv">&times;</span>
-
-    <div id="expandedChart"></div>
+    <p>
+      Trend Following ASX provides market analysis and educational information
+      only and does not provide personal financial advice.
+    </p>
 
   </div>
+
 </div>
 
-<!-- TRADINGVIEW -->
-<script src="https://s3.tradingview.com/tv.js"></script>
-
-<script>
-function renderTradingViewCharts(data) {
-
-  const container = document.getElementById("tv-charts");
-
-  container.innerHTML = `
-    <div class="tv-section">
-      <div class="tv-grid" id="tvGrid"></div>
-    </div>
-  `;
-
-  const grid = document.getElementById("tvGrid");
-
-  const modal = document.getElementById("tvModal");
-  const expanded = document.getElementById("expandedChart");
-
-  // TOP 10 HOLDINGS
-  data.slice(0,10).forEach((row, index) => {
-
-    const symbol = row["TV Symbol"];
-
-    if (!symbol) return;
-
-    const chartId = `tv_chart_${index}`;
-
-    const card = document.createElement("div");
-
-    card.className = "tv-card";
-
-    card.dataset.symbol = symbol;
-
-    card.innerHTML = `
-    <div class="tv-ticker">
-  ${row["Ticker"]}
-</div>
-
-<div id="${chartId}" class="tv-mini"></div>
-    `;
-
-    grid.appendChild(card);
-
-    // MINI CHART
-    new TradingView.widget({
-      container_id: chartId,
-
-      symbol: symbol,
-
-      interval: "D",
-
-      timezone: "Australia/Sydney",
-
-      theme: "dark",
-
-      width: "100%",
-      height: "100%",
-
-      style: "1",
-
-      locale: "en",
-
-      toolbar_bg: "#0f172a",
-
-      enable_publishing: false,
-
-      hide_top_toolbar: true,
-
-      hide_legend: true,
-
-      save_image: false
-    });
-
-    // EXPANDABLE CLICK
-    card.addEventListener("click", () => {
-
-      expanded.innerHTML = "";
-
-      modal.style.display = "flex";
-
-      new TradingView.widget({
-        container_id: "expandedChart",
-
-        symbol: symbol,
-
-        interval: "D",
-
-        timezone: "Australia/Sydney",
-
-        theme: "dark",
-
-        autosize: true,
-
-        style: "1",
-
-        locale: "en",
-
-        toolbar_bg: "#0f172a",
-
-        allow_symbol_change: true,
-
-        enable_publishing: false,
-
-        save_image: false
-      });
-
-    });
-
-  });
-
-  // CLOSE MODAL
-  document.getElementById("closeTv").onclick = () => {
-    modal.style.display = "none";
-    expanded.innerHTML = "";
-  };
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-      expanded.innerHTML = "";
-    }
-  });
-
-}
-</script>
-
-  <script>
-
-const BASE_URL =
-"https://script.google.com/macros/s/AKfycbyP6ar_G67uTxgMwmhMlxSFZ3LFAtyPf7wiuLfUo_jxRpaQnYNhbkhws8aY_0AFe22yEg/exec";
-
-/* LOAD SHEET */
-function loadSheet(sheet, callback) {
-
-  const s = document.createElement("script");
-
-  s.src =
-    `${BASE_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
-
-  document.body.appendChild(s);
-}
-
-/* ETF CALLBACK */
-function handleETF(data) {
-
-  renderTradingViewCharts(data);
-
-}
-
-/* RUN */
-document.addEventListener("DOMContentLoaded", () => {
-
-  loadSheet("ETF May 1", "handleETF");
-
-});
-
-</script>
-  
 </body>
 </html>

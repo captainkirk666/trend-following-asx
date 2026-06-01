@@ -292,14 +292,30 @@ fetch("./components/navbar.html")
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const BASE_URL = "https://script.google.com/macros/s/AKfycbwCDEXsuwAN8yyMAP7mhaYwQip_S-qv0PI80hIT8SNGs9BDcGw6EzhcaU4NH26QqhkP/exec";
 
+const DATABASE_URL =
+"https://script.google.com/macros/s/AKfycbwCDEXsuwAN8yyMAP7mhaYwQip_S-qv0PI80hIT8SNGs9BDcGw6EzhcaU4NH26QqhkP/exec";
+
+const PORTFOLIO_URL =
+"https://script.google.com/macros/s/AKfycbyP6ar_G67uTxgMwmhMlxSFZ3LFAtyPf7wiuLfUo_jxRpaQnYNhbkhws8aY_0AFe22yEg/exec";
+
+
+
+ 
 const liveTotals = {};
 
 /* LOAD */
-function loadSheet(sheet, callback) {
+function loadDatabaseSheet(sheet, callback) {
   const s = document.createElement("script");
-  s.src = `${BASE_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
+  s.src =
+    `${DATABASE_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
+  document.head.appendChild(s);
+}
+
+function loadPortfolioSheet(sheet, callback) {
+  const s = document.createElement("script");
+  s.src =
+    `${PORTFOLIO_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
   document.head.appendChild(s);
 }
 
@@ -514,8 +530,7 @@ function handleETFHistory(d) { renderCard(d, "Total", "etf"); }
 ========================= */
 
 const TREND_URL =
-"https://script.google.com/macros/s/AKfycbyP6ar_G67uTxgMwmhMlxSFZ3LFAtyPf7wiuLfUo_jxRpaQnYNhbkhws8aY_0AFe22yEg/exec?sheet=IN%20TREND%20SCANNER";
-
+`${DATABASE_URL}?sheet=IN%20TREND%20SCANNER`;
 let trendData = [];
 
 function loadTrendScanner(){
@@ -660,7 +675,7 @@ function loadTop10(){
   s.id = "top10Script";
 
   s.src =
-    `${BASE_URL}?sheet=${encodeURIComponent("TOP 10")}&callback=handleTop10`;
+ `${DATABASE_URL}?sheet=${encodeURIComponent("TOP 10")}&callback=handleTop10`;
 
   document.body.appendChild(s);
 }
@@ -740,7 +755,7 @@ function loadNewEntries(){
   s.id = "newEntriesScript";
 
   s.src =
-    `${BASE_URL}?sheet=${encodeURIComponent("NEW ENTRIES")}&callback=handleNewEntries`;
+`${DATABASE_URL}?sheet=${encodeURIComponent("NEW ENTRIES")}&callback=handleNewEntries`;
 
   document.body.appendChild(s);
 }
@@ -803,19 +818,19 @@ loadTrendScanner();
   loadTop10();
   loadNewEntries();
   
-  loadSheet("Darvas Oct 25", "handleDarvas");
-loadSheet("InTrend May 23", "handleInTrend");
-  loadSheet("Breakout May 26", "handleBreakout");
-  loadSheet("ETF May 1", "handleETF");
+loadPortfolioSheet("Darvas Oct 25", "handleDarvas");
+loadPortfolioSheet("InTrend May 23", "handleInTrend");
+loadPortfolioSheet("Breakout May 26", "handleBreakout");
+loadPortfolioSheet("ETF May 1", "handleETF");
 
-  loadSheet("ASX MASTER", "handleASXMaster");
+loadDatabaseSheet("ASX MASTER", "handleASXMaster");
 
-  loadSheet("Darvas Oct 25 History", "handleDarvasHistory");
-loadSheet("InTrend May 23 History", "handleInTrendHistory");
-  loadSheet("Breakout May 26 History", "handleBreakoutHistory");
-  loadSheet("ETF May 1 History", "handleETFHistory");
+loadPortfolioSheet("Darvas Oct 25 History", "handleDarvasHistory");
+loadPortfolioSheet("InTrend May 23 History", "handleInTrendHistory");
+loadPortfolioSheet("Breakout May 26 History", "handleBreakoutHistory");
+loadPortfolioSheet("ETF May 1 History", "handleETFHistory");
 
-loadSheet("Updates", "handleUpdates");
+loadDatabaseSheet("Updates", "handleUpdates");
 
 });
 </script>

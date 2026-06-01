@@ -692,7 +692,7 @@ function loadTop10(){
 
   body.innerHTML = "";
 
-  data.forEach((stock,index) => {
+  data.slice(0,8).forEach(stock => {
 
     const row =
       document.createElement("tr");

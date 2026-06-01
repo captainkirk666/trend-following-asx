@@ -692,7 +692,7 @@ function loadTop10(){
 
   body.innerHTML = "";
 
-data.forEach(stock => {
+data.slice(0,10).forEach((stock, index) => {
 
     const row =
       document.createElement("tr");
@@ -771,7 +771,7 @@ function handleNewEntries(data){
 
   grid.innerHTML = "";
 
-  data.forEach(stock => {
+data.slice(0,8).forEach(stock => {
 
     const ticker =
       (stock["Ticker"] || "N/A")

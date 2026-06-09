@@ -293,27 +293,27 @@ fetch("./components/navbar.html")
 
 <script>
 
-const DATABASE_URL =
+ DATABASE_URL =
 "https://script.google.com/macros/s/AKfycbwCDEXsuwAN8yyMAP7mhaYwQip_S-qv0PI80hIT8SNGs9BDcGw6EzhcaU4NH26QqhkP/exec";
 
-const PORTFOLIO_URL =
+ PORTFOLIO_URL =
 "https://script.google.com/macros/s/AKfycbyP6ar_G67uTxgMwmhMlxSFZ3LFAtyPf7wiuLfUo_jxRpaQnYNhbkhws8aY_0AFe22yEg/exec";
 
 
 
  
-const liveTotals = {};
+ liveTotals = {};
 
 /* LOAD */
 function loadDatabaseSheet(sheet, callback) {
-  const s = document.createElement("script");
+   s = document.createElement("script");
   s.src =
     `${DATABASE_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
   document.head.appendChild(s);
 }
 
 function loadPortfolioSheet(sheet, callback) {
-  const s = document.createElement("script");
+   s = document.createElement("script");
   s.src =
     `${PORTFOLIO_URL}?sheet=${encodeURIComponent(sheet)}&callback=${callback}`;
   document.head.appendChild(s);
@@ -323,11 +323,11 @@ function loadPortfolioSheet(sheet, callback) {
 function calcPerf(totals, live) {
   if (!totals.length || !live) return null;
 
-  const portfolio = ((live - 100000) / 100000) * 100;
+   portfolio = ((live - 100000) / 100000) * 100;
 
   let daily = 0;
   if (totals.length > 1) {
-    const prev = totals[totals.length - 2];
+     prev = totals[totals.length - 2];
     daily = ((live - prev) / prev) * 100;
   }
 
@@ -341,8 +341,8 @@ function fmt(v) {
 function applyPerf(card, daily, portfolio) {
   if (!card) return;
 
-  const d = card.querySelector(".daily");
-  const p = card.querySelector(".portfolio");
+   d = card.querySelector(".daily");
+   p = card.querySelector(".portfolio");
 
   if (!d || !p) return;
 
@@ -355,14 +355,14 @@ function applyPerf(card, daily, portfolio) {
 
 /* TOTAL */
 function renderTotal(data, prefix) {
-  const total = data.reduce((sum, r) => {
-    const val = parseFloat(String(r["TOTAL $"] || "").replace(/[$,]/g, ""));
+   total = data.reduce((sum, r) => {
+     val = parseFloat(String(r["TOTAL $"] || "").replace(/[$,]/g, ""));
     return sum + (isNaN(val) ? 0 : val);
   }, 0);
 
   liveTotals[prefix] = total;
 
-  const el = document.getElementById(prefix + "-total");
+   el = document.getElementById(prefix + "-total");
   if (!el) return;
 
   el.textContent = "$" + total.toLocaleString(undefined, { minimumFractionDigits: 2 });
@@ -762,8 +762,6 @@ function loadNewEntries(){
 
 function handleNewEntries(data){
 
-  newEntriesData = data;
-
   const grid =
     document.getElementById("newEntriesGrid");
 
@@ -771,7 +769,47 @@ function handleNewEntries(data){
 
   grid.innerHTML = "";
 
-data.slice(0,8).forEach(stock => {
+  // No data returned
+  if(!data || data.length === 0){
+
+    grid.innerHTML = `
+      <div class="master-card new-entry-card no-entry-card">
+        <div class="new-entry-ticker">
+          No New Entries
+        </div>
+
+        <div class="new-entry-score">
+          No stocks entered the trend portfolio today
+        </div>
+      </div>
+    `;
+
+    return;
+  }
+
+  // First row contains #N/A
+  const firstTicker =
+    String(data[0]["Ticker"] || "").trim();
+
+  if(firstTicker === "#N/A"){
+
+    grid.innerHTML = `
+      <div class="master-card new-entry-card no-entry-card">
+        <div class="new-entry-ticker">
+          No New Entries
+        </div>
+
+        <div class="new-entry-score">
+          All qualifying stocks are already in the portfolio
+        </div>
+      </div>
+    `;
+
+    return;
+  }
+
+  // Normal cards
+  data.slice(0,8).forEach(stock => {
 
     const ticker =
       (stock["Ticker"] || "N/A")
@@ -784,7 +822,7 @@ data.slice(0,8).forEach(stock => {
       document.createElement("div");
 
     card.className =
-  "master-card new-entry-card";
+      "master-card new-entry-card";
 
     card.innerHTML = `
       <div class="new-entry-ticker">

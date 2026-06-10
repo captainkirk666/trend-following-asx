@@ -1502,3 +1502,19 @@ padding:0 24px;
 .contact-button:hover{
   opacity:0.9;
 }
+
+/* ===== NO NEW ENTRY CARD ===== */
+
+
+.no-entry-card {
+  text-align: center;
+}
+
+.no-entry-card .new-entry-ticker {
+  font-size: 1.8rem;
+}
+
+.no-entry-card .new-entry-score {
+  color: #94a3b8;
+  margin-top: 10px;
+}

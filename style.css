@@ -1591,11 +1591,15 @@ padding:0 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:6px 0;
-  border-bottom:1px solid rgba(255,255,255,0.06);
+
+  padding:2px 0;
+
+  line-height:1;
 
   font-family:'Roboto', sans-serif;
   font-size:15px;
+
+  border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
 .insight-ticker{

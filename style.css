@@ -1518,3 +1518,51 @@ padding:0 24px;
   color: #94a3b8;
   margin-top: 10px;
 }
+
+
+/* ===== SCANNER INSIGHTS ===== */
+
+ .scanner-insights{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-bottom:30px;
+}
+
+.insight-card{
+  background:#0f172a;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  padding:20px;
+}
+
+.insight-card h3{
+  margin:0 0 16px;
+  font-family:'Source Serif 4',serif;
+  font-size:1.2rem;
+}
+
+.insight-row{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+.insight-row:last-child{
+  border-bottom:none;
+}
+
+.insight-ticker{
+  font-weight:700;
+}
+
+.insight-value{
+  color:#94a3b8;
+}
+
+@media(max-width:900px){
+  .scanner-insights{
+    grid-template-columns:1fr;
+  }
+}

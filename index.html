@@ -105,7 +105,6 @@ fetch("./components/navbar.html")
 
   <div id="newEntriesGrid"></div>
 
-</section>
 
 <!-- Scanner insights -->
 
@@ -1005,6 +1004,10 @@ document.addEventListener("DOMContentLoaded", () => {
 loadTrendScanner();
   loadTop10();
   loadNewEntries();
+
+ loadLongestRunning();
+loadStrongestTrend();
+loadFallenOut();
   
 loadPortfolioSheet("Darvas Oct 25", "handleDarvas");
 loadPortfolioSheet("InTrend May 23", "handleInTrend");

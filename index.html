@@ -863,10 +863,140 @@ function handleNewEntries(data){
   });
 }
 
-  function handleASXMaster(data) {
+function handleASXMaster(data) {
 
   console.log("ASX MASTER:", data);
 
+}
+
+/* =========================
+   SCANNER INSIGHTS
+========================= */
+
+function loadLongestRunning(){
+
+  const existing =
+    document.getElementById("longestRunningScript");
+
+  if(existing) existing.remove();
+
+  const s = document.createElement("script");
+
+  s.id = "longestRunningScript";
+
+  s.src =
+`${DATABASE_URL}?sheet=${encodeURIComponent("LONGEST RUNNING")}&callback=handleLongestRunning`;
+
+  document.body.appendChild(s);
+}
+
+function handleLongestRunning(data){
+
+  const container =
+    document.getElementById("longestRunning");
+
+  if(!container) return;
+
+  container.innerHTML = "";
+
+  data.slice(0,5).forEach(stock => {
+
+    container.innerHTML += `
+      <div class="insight-row">
+        <span class="insight-ticker">
+          ${stock["Ticker"]}
+        </span>
+
+        <span class="insight-value">
+          ${stock["Days"]} days
+        </span>
+      </div>
+    `;
+  });
+}
+
+function loadStrongestTrend(){
+
+  const existing =
+    document.getElementById("strongestTrendScript");
+
+  if(existing) existing.remove();
+
+  const s = document.createElement("script");
+
+  s.id = "strongestTrendScript";
+
+  s.src =
+`${DATABASE_URL}?sheet=${encodeURIComponent("STRONGEST TREND")}&callback=handleStrongestTrend`;
+
+  document.body.appendChild(s);
+}
+
+function handleStrongestTrend(data){
+
+  const container =
+    document.getElementById("strongestTrend");
+
+  if(!container) return;
+
+  container.innerHTML = "";
+
+  data.slice(0,5).forEach(stock => {
+
+    container.innerHTML += `
+      <div class="insight-row">
+        <span class="insight-ticker">
+          ${stock["Ticker"]}
+        </span>
+
+        <span class="insight-value">
+          ${stock["Score"]}
+        </span>
+      </div>
+    `;
+  });
+}
+
+function loadFallenOut(){
+
+  const existing =
+    document.getElementById("fallenOutScript");
+
+  if(existing) existing.remove();
+
+  const s = document.createElement("script");
+
+  s.id = "fallenOutScript";
+
+  s.src =
+`${DATABASE_URL}?sheet=${encodeURIComponent("FALL OUT CARD")}&callback=handleFallenOut`;
+
+  document.body.appendChild(s);
+}
+
+function handleFallenOut(data){
+
+  const container =
+    document.getElementById("fallenOut");
+
+  if(!container) return;
+
+  container.innerHTML = "";
+
+  data.slice(0,5).forEach(stock => {
+
+    container.innerHTML += `
+      <div class="insight-row">
+        <span class="insight-ticker">
+          ${stock["Ticker"]}
+        </span>
+
+        <span class="insight-value">
+          Rank ${stock["Last Rank"]}
+        </span>
+      </div>
+    `;
+  });
 }
   
 /* RUN */

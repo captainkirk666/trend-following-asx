@@ -576,6 +576,16 @@ font-family:'Source Serif 4', serif;
   border-radius:999px;
 }
 
+.top10-section table td{
+  font-size:15px;
+  color:#cbd5e1;
+}
+
+.top10-section table th{
+  font-size:15px;
+  color:#cbd5e1;
+}
+
 /* ===== TOP 10 TABLE ===== */
 
 .table-wrap{
@@ -1566,7 +1576,6 @@ padding:0 24px;
     transform 0.2s ease,
     box-shadow 0.2s ease;
 
-}
 }
 
 .insight-card h3{

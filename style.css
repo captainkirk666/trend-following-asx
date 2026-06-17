@@ -485,7 +485,7 @@ font-family:'Source Serif 4', serif;
 
 /* ===== TOP 10 ===== */
 .top10-section{
-  max-width:1300px;
+    width:100%;
   margin:40px auto;
   padding:0px 20px;
 }

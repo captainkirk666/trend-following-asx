@@ -1579,34 +1579,33 @@ padding:0 24px;
 }
 
 .insight-card h3{
-  margin:0 0 15px;
-  font-family:'Source Serif 4',serif;
-  font-size:1.2rem;
-  color:#94a3b8;
-}
-
-.insight-row:hover{
-  background:rgba(94,203,255,0.06);
+  margin:0 0 12px;
+  font-family:'Roboto', sans-serif;
+  font-size:15px;
+  font-weight:600;
+  color:#cbd5e1;
+  text-align:center;
 }
 
 .insight-row{
   display:flex;
   justify-content:space-between;
-  padding:4px 0;
-  line-height:1.2;
+  align-items:center;
+  padding:6px 0;
   border-bottom:1px solid rgba(255,255,255,0.06);
-}
 
-.insight-row:last-child{
-  border-bottom:none;
+  font-family:'Roboto', sans-serif;
+  font-size:15px;
 }
 
 .insight-ticker{
-  font-weight:700;
+  color:#cbd5e1;
+  font-weight:600;
 }
 
 .insight-value{
-color:#5ecbff;
+  color:#5ecbff;
+  font-weight:600;
 }
 
 @media(max-width:900px){

@@ -1591,14 +1591,12 @@ padding:0 24px;
   display:flex;
   align-items:center;
 
-  padding:2px 0;
-
-  line-height:1;
+  padding:8px 0;
 
   font-family:'Roboto', sans-serif;
   font-size:15px;
 
-  border-bottom:1px solid rgba(255,255,255,0.06);
+  border-bottom:1px solid rgba(148,163,184,0.15);
 }
 
 .insight-row:hover {

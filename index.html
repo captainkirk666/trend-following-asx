@@ -118,10 +118,10 @@ fetch("./components/navbar.html")
     <div id="longestRunning"></div>
   </div>
 
-  <div class="insight-card">
-    <h3>STRONGEST TREND</h3>
-    <div id="strongestTrend"></div>
-  </div>
+ <div class="insight-card">
+  <h3>BIGGEST CLIMBERS</h3>
+  <div id="biggestClimbers"></div>
+</div>
 
   <div class="insight-card">
     <h3>FALLEN OUT</h3>
@@ -916,27 +916,27 @@ function handleLongestRunning(data){
   });
 }
 
-function loadStrongestTrend(){
+function loadBiggestClimbers(){
 
   const existing =
-    document.getElementById("strongestTrendScript");
+    document.getElementById("biggestClimbersScript");
 
   if(existing) existing.remove();
 
   const s = document.createElement("script");
 
-  s.id = "strongestTrendScript";
+  s.id = "biggestClimbersScript";
 
   s.src =
-`${DATABASE_URL}?sheet=${encodeURIComponent("STRONGEST TREND")}&callback=handleStrongestTrend`;
+`${DATABASE_URL}?sheet=${encodeURIComponent("BIGGEST CLIMBERS")}&callback=handleBiggestClimbers`;
 
   document.body.appendChild(s);
 }
 
-function handleStrongestTrend(data){
+function handleBiggestClimbers(data){
 
   const container =
-    document.getElementById("strongestTrend");
+    document.getElementById("biggestClimbers");
 
   if(!container) return;
 
@@ -951,7 +951,7 @@ function handleStrongestTrend(data){
         </span>
 
         <span class="insight-value">
-          ${stock["Score"]}
+          ↑${stock["Change"]}
         </span>
       </div>
     `;
@@ -1008,7 +1008,7 @@ loadTrendScanner();
   loadNewEntries();
 
  loadLongestRunning();
-loadStrongestTrend();
+loadBiggestClimbers();
 loadFallenOut();
   
 loadPortfolioSheet("Darvas Oct 25", "handleDarvas");

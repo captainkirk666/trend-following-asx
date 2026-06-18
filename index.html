@@ -120,7 +120,7 @@ fetch("./components/navbar.html")
 
   <div class="insight-card">
     <h3>BIGGEST CLIMBERS</h3>
-    <div id="biggestclimbers></div>
+    <div id="biggestClimbers"></div>
   </div>
 
   <div class="insight-card">
@@ -946,16 +946,24 @@ function handleBiggestClimbers(data){
 
     container.innerHTML += `
       <div class="insight-row">
+
         <span class="insight-ticker">
           ${stock["Ticker"]}
+        </span>
+
+        <span class="insight-company">
+          ${stock["Company"]}
         </span>
 
         <span class="insight-value">
           ↑${stock["Change"]}
         </span>
+
       </div>
     `;
+
   });
+
 }
 
 function loadFallenOut(){

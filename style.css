@@ -1599,9 +1599,8 @@ padding:0 24px;
   border-bottom:1px solid rgba(148,163,184,0.15);
 }
 
-.insight-row:hover {
-   background: rgba(56,189,248,0.15);
-  color: #38bdf8;
+.insight-row:hover{
+  background:rgba(94,203,255,0.06);
 }
 
 

@@ -1582,7 +1582,7 @@ padding:0 24px;
   margin:0 0 12px;
   font-family:'Roboto', sans-serif;
   font-size:15px;
-  font-weight:600;
+  font-weight:500;
   color:#cbd5e1;
   text-align:center;
 }
@@ -1604,12 +1604,12 @@ padding:0 24px;
 
 .insight-ticker{
   color:#cbd5e1;
-  font-weight:600;
+  font-weight:500;
 }
 
 .insight-value{
   color:#5ecbff;
-  font-weight:600;
+  font-weight:500;
 }
 
 @media(max-width:900px){

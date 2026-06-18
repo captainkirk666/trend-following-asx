@@ -891,12 +891,10 @@ function loadLongestRunning(){
   document.body.appendChild(s);
 }
 
-function handleLongestRunning(data){
+ffunction handleLongestRunning(data){
 
   const container =
     document.getElementById("longestRunning");
-
-  if(!container) return;
 
   container.innerHTML = "";
 
@@ -904,13 +902,19 @@ function handleLongestRunning(data){
 
     container.innerHTML += `
       <div class="insight-row">
+
         <span class="insight-ticker">
           ${stock["Ticker"]}
         </span>
 
-        <span class="insight-value">
-          ${stock["Days"]} days
+        <span class="insight-company">
+          ${stock["Company"]}
         </span>
+
+        <span class="insight-value">
+          ${stock["Days"]}d
+        </span>
+
       </div>
     `;
   });

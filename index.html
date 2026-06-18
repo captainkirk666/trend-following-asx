@@ -118,10 +118,21 @@ fetch("./components/navbar.html")
     <div id="longestRunning"></div>
   </div>
 
- <div class="insight-card">
-  <h3>BIGGEST CLIMBERS</h3>
-  <div id="biggestClimbers"></div>
-</div>
+container.innerHTML += `
+  <div class="insight-row">
+    <span class="insight-ticker">
+      ${stock["Ticker"]}
+    </span>
+
+    <span class="insight-company">
+      ${stock["Company"]}
+    </span>
+
+    <span class="insight-value">
+      ↑${stock["Change"]}
+    </span>
+  </div>
+`;
 
   <div class="insight-card">
     <h3>FALLEN OUT</h3>

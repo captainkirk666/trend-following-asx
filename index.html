@@ -992,17 +992,23 @@ function handleFallenOut(data){
 
   data.slice(0,5).forEach(stock => {
 
-    container.innerHTML += `
-      <div class="insight-row">
-        <span class="insight-ticker">
-          ${stock["Ticker"]}
-        </span>
+container.innerHTML += `
+  <div class="insight-row">
 
-        <span class="insight-value">
-          Rank ${stock["Last Rank"]}
-        </span>
-      </div>
-    `;
+    <span class="insight-ticker">
+      ${stock["Ticker"]}
+    </span>
+
+    <span class="insight-company">
+      ${stock["Company"]}
+    </span>
+
+    <span class="insight-value">
+      Rank ${stock["Last Rank"]}
+    </span>
+
+  </div>
+`;
   });
 }
   

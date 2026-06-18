@@ -933,7 +933,7 @@ function loadBiggestClimbers(){
   document.body.appendChild(s);
 }
 
-function handleBiggestClimbers(data){
+ function handleBiggestClimbers(data){
 
   const container =
     document.getElementById("biggestClimbers");
@@ -951,19 +951,13 @@ function handleBiggestClimbers(data){
           ${stock["Ticker"]}
         </span>
 
-        <span class="insight-company">
-          ${stock["Company"]}
-        </span>
-
         <span class="insight-value">
-          ↑${stock["Change"]}
+          ↑${stock["Movement"]}
         </span>
 
       </div>
     `;
-
   });
-
 }
 
 function loadFallenOut(){

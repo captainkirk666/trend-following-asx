@@ -775,7 +775,7 @@ font-family:'Source Serif 4', serif;
 }
 
 .logo img {
-  height: 70px;
+  height: 62px;
   width: auto;
   display: block;
 }
@@ -812,7 +812,7 @@ font-family:'Source Serif 4', serif;
 .nav-links {
   display: flex;
   align-items: center;   /* 👈 THIS is the key */
-  gap: 12px;
+  gap: 8px;
 }
 
 /* TAB BUTTONS */
@@ -823,14 +823,14 @@ font-family:'Source Serif 4', serif;
   justify-content: center;
 
   height: 40px;              /* consistent height */
-  padding: 0 16px;           /* horizontal spacing */
+  padding: 0 14px;           /* horizontal spacing */
 
   background: transparent;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 10px;
 
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
 
   text-decoration: none;     /* 👈 important for <a> links */

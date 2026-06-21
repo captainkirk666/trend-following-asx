@@ -774,6 +774,11 @@ font-family:'Source Serif 4', serif;
   backdrop-filter: blur(8px);
 }
 
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
 
 
 .dropdown {

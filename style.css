@@ -775,7 +775,7 @@ font-family:'Source Serif 4', serif;
 }
 
 .logo img {
-  height: 62px;
+  height: 58px;
   width: auto;
   display: block;
 }
@@ -783,7 +783,7 @@ font-family:'Source Serif 4', serif;
 
 .dropdown {
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 
@@ -823,14 +823,14 @@ font-family:'Source Serif 4', serif;
   justify-content: center;
 
   height: 40px;              /* consistent height */
-  padding: 0 14px;           /* horizontal spacing */
+  padding: 0 12px;           /* horizontal spacing */
 
   background: transparent;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 10px;
 
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
 
   text-decoration: none;     /* 👈 important for <a> links */

@@ -992,29 +992,23 @@ function handleFallenOut(data){
 
   if(!container) return;
 
-  container.innerHTML = "";
-
-  data.slice(0,10).forEach(stock => {
-
-container.innerHTML += `
-  <div class="insight-row">
+  container.innerHTML += `
+<div class="insight-row">
 
     <span class="insight-ticker">
-      ${stock["Ticker"]}
+        ${hasData ? stock["Ticker"] : ""}
     </span>
 
     <span class="insight-company">
-      ${stock["Company"]}
+        ${hasData ? stock["Company"] : ""}
     </span>
 
-<span class="insight-value">
-  ▼${stock["Fall"]}
-</span>
+    <span class="insight-value">
+        ${hasData ? `▼${stock["Fall"]}` : ""}
+    </span>
 
-  </div>
+</div>
 `;
-  });
-}
   
 /* RUN */
 document.addEventListener("DOMContentLoaded", () => {

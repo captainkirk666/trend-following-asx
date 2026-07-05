@@ -993,32 +993,24 @@ function handleFallenOut(data) {
 
     container.innerHTML = "";
 
-    data.slice(0, 10).forEach(stock => {
+    data
+        .filter(stock => stock["Ticker"])
+        .slice(0, 10)
+        .forEach(stock => {
 
-        const hasData =
-            stock["Ticker"] &&
-            stock["Fall"] !== "" &&
-            stock["Fall"] != null;
+            container.innerHTML += `
+                <div class="insight-row">
 
-        container.innerHTML += `
-        <div class="insight-row">
+                    <span class="insight-ticker">${stock["Ticker"]}</span>
 
-            <span class="insight-ticker">
-                ${hasData ? stock["Ticker"] : ""}
-            </span>
+                    <span class="insight-company">${stock["Company"]}</span>
 
-            <span class="insight-company">
-                ${hasData ? stock["Company"] : ""}
-            </span>
+                    <span class="insight-value">▼${stock["Fall"]}</span>
 
-            <span class="insight-value">
-                ${hasData ? `▼${stock["Fall"]}` : ""}
-            </span>
+                </div>
+            `;
 
-        </div>
-        `;
-
-    });
+        });
 
 }
   

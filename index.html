@@ -985,30 +985,42 @@ function loadFallenOut(){
   document.body.appendChild(s);
 }
 
-function handleFallenOut(data){
+function handleFallenOut(data) {
 
-  const container =
-    document.getElementById("fallenOut");
+    const container = document.getElementById("fallenOut");
 
-  if(!container) return;
+    if (!container) return;
 
-  container.innerHTML += `
-<div class="insight-row">
+    container.innerHTML = "";
 
-    <span class="insight-ticker">
-        ${hasData ? stock["Ticker"] : ""}
-    </span>
+    data.slice(0, 10).forEach(stock => {
 
-    <span class="insight-company">
-        ${hasData ? stock["Company"] : ""}
-    </span>
+        const hasData =
+            stock["Ticker"] &&
+            stock["Fall"] !== "" &&
+            stock["Fall"] != null;
 
-    <span class="insight-value">
-        ${hasData ? `▼${stock["Fall"]}` : ""}
-    </span>
+        container.innerHTML += `
+        <div class="insight-row">
 
-</div>
-`;
+            <span class="insight-ticker">
+                ${hasData ? stock["Ticker"] : ""}
+            </span>
+
+            <span class="insight-company">
+                ${hasData ? stock["Company"] : ""}
+            </span>
+
+            <span class="insight-value">
+                ${hasData ? `▼${stock["Fall"]}` : ""}
+            </span>
+
+        </div>
+        `;
+
+    });
+
+}
   
 /* RUN */
 document.addEventListener("DOMContentLoaded", () => {

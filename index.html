@@ -829,8 +829,11 @@ function handleNewEntries(data){
     return;
   }
 
-  // Normal cards
-  data.slice(0,8).forEach(stock => {
+ // Normal cards
+data
+  .filter(stock => stock["Ticker"] && String(stock["Ticker"]).trim() !== "")
+  .slice(0,8)
+  .forEach(stock => {
 
     const ticker =
       (stock["Ticker"] || "N/A")
